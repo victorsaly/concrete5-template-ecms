@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="btPersonBlock">
+		<!-- Unique ID -->
+		<field name="bID" type="I">
+			<key />
+			<unsigned />
+		</field>
+		
+		<!-- Name of person -->
+		<field name="personName" type="C"></field>
+
+		<!-- Person Description -->
+		<field name="personDesc" type="X2"></field>
+		
+		<!-- Alt Text (generated from personName and/or personDesc) -->
+		<field name="altText" type="C" size="255"></field>
+
+		<field name="personLink" type="X2"></field>
+
+		<!-- Image ID from Asset Lib -->
+		<field name="imgID" type="I" size="10">
+    		<default value="0" />
+   			<unsigned/>
+		</field>
+
+
+	</table>
+</schema>

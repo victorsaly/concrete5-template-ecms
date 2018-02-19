@@ -54,10 +54,6 @@
 
 					<nav role="navigation" class="site-navigation main-navigation grid_11" id="site-navigation">
 						<div class="menu-main-menu-container">
-							<!-- < ?php
-                            $a = new GlobalArea('Menu');
-                            $a->display();
-                            ? > -->
 							<?php
 							$bt = BlockType::getByHandle('autonav');
 							$bt->controller->orderBy = 'display_asc';
@@ -131,7 +127,9 @@
 
 								?>
 									<li>
-										<div class="image fright"><img class="radius" src="<?=$src?>" alt="Image alt"></div>
+										<div class="image fright">
+											<img class="radius img-responsive" src="<?=$src?>" alt="Image alt">
+										</div>
 										<div class="content fleft">
 											<h3>
 											<?php echo '' . $page->getCollectionName() . ''; ?>
@@ -143,9 +141,18 @@
 												<?php echo '' . $page->getCollectionDateAdded() . ''; ?>
 											</p>
 											<p class="description">
-											<?php echo '' . $page->getCollectionDescription() . ''; ?>
+											<?php
+											// load text helper
+											$th = Loader::helper('text');
+											// news description
+											$newsDescription = $page->getCollectionDescription();
+											// short version of the text to fix the long text issue in the homepage 19/02/2018
+  											$newsDescription = $th->shortenTextWord($newsDescription, 200);
+											
+											echo '' . $newsDescription . ''; ?>
 											</p>
-											<div class="flex-button-red"><a class="radius" href="<?php echo '' . $page->getCollectionPath() . ''; ?>">Read More <i class="icon-angle-right"></i></a></div>
+											<div class="flex-button-red">
+											<a class="radius" href="<?php echo '' . $page->getCollectionPath() . ''; ?>">Read More <i class="icon-angle-right"></i></a></div>
 										</div>
 										<div class="clear"></div>
 									</li>

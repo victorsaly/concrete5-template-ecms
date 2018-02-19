@@ -2060,16 +2060,36 @@ aside ul {
 }
 
 
+
+/*	----------------------------------------------------------
+	Widget Latest News Home page
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
+
+.ci-block-person {
+    text-align: center;
+}
+
+.ci-block-person-title p {
+    padding: 0;
+    margin: 8px;
+    color: #666;
+}
+.ci-block-person-wrapper-img img {
+    width: 150px;
+    border-radius: 100%;
+}
+
+
 /*	----------------------------------------------------------
 	Widget Latest News Home page
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = */
 
 .latestnews-body .image{
-	width: 58%;
+	width: 38%;
 }
 
 .latestnews-body .content{
-	width: 38%;
+	width: 58%;
 }
 
 .flexslider-news { 
