@@ -262,34 +262,32 @@
 
 		<!-- Footer -->
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<div id="tertiary" class="sidebar-container" role="complementary">
-				<div class="container_16">
-
-					<!-- First Widget Area -->
-					<div class="grid_6">
-						<aside id="meta-0" class="widget widget_adress">
-							<h3>Contact us</h3>
-							<?php
-							$a = new GlobalArea('ContactUs');
-							$a->display();
-							?>
-
-							<!--  -->
-						</aside>
-					</div>
+				<div id="tertiary" class="sidebar-container" role="complementary">
+					<div class="container_16">
+						
+						
+						<div class="grid_6">
+							<aside id="meta-0" class="widget widget_adress">
+								<h3>Contact us</h3>
+								<?php
+								$a = new GlobalArea('ContactUs');
+								$a->display();
+								?>
+							</aside>
+						</div>
 
 
-					<!-- Second Widget Area -->
-					<div class="grid_5">
+						
+						<div class="grid_5">
 						<?php 
 						$list = new \Concrete\Core\Page\PageList();
 									$list->sortByPublicDateDescending();
-									$list->filterByPageTypeHandle('News');
-									$list->setItemsPerPage(5);
-									$list->filterByIsFeatured(1);
+									$list->filterByPageTypeHandle('news');
+									$list->setItemsPerPage(3);
+									
 									$pages = $list->getResults();
 
-						if ($pages.length>0){
+						
 						
 						?>
 						<aside id="meta-1" class="widget widget_meta">
@@ -300,24 +298,7 @@
 									
 									foreach ($pages as $page) {
 									$blocks = $page->getBlocks("ImageArea");
-									$count2 = 1;
-									foreach ($blocks as $block) {
-												if ($block->getBlockTypeHandle() == "image") {
-													if (is_object($block)) {
-														$tsb = $block->getInstance();
-														$thumb = $tsb->getFileObject();
-
-														if (is_object($thumb)) {
-                    										$tag = Core::make('html/image', array($thumb, false))->getTag();
-                    										$type = \Concrete\Core\File\Image\Thumbnail\Type\Type::getByHandle('file_manager_detail');
-                    										$src = $thumb->getThumbnailURL($type->getBaseVersion());
-														}
-													}
-												}
-											}
-
-											if ($count2<=4)
-										{
+									
 
 								?>
 									<li>
@@ -326,21 +307,18 @@
 											</a>
 									</li>
 								<?php
-									}
-									$count2++;
+									
 									}
 								?>
 							</ul>
 						</aside>
-						<?php
-						}
-						?>
+						
 					</div>
-
+						
 					
-					<!-- Forth Widget Area -->
-					<div class="grid_5">
-						<aside id="meta-3" class="widget widget_meta">
+						
+						<div class="grid_5">
+							<aside id="meta-3" class="widget widget_meta">
 						<h3>Latest Tweets</h3>
 						
 							<script>
@@ -377,37 +355,34 @@
 							<div class="clear"></div>
 							<div><a href="https://twitter.com/ecancer" target="_blank" class="radius follow">Follow @ecancer</a></div>
 						</aside>
-					</div>
+						</div>
 
-					<div class="clear"></div>
+						<div class="clear"></div>
+					</div>
 				</div>
-			</div>
+				<div class="site-info">
+					<div class="container_16">
+						
+						
+						<div class="grid_8">
+							<p class="copy">
+							
+							<?php
+								$a = new GlobalArea('Copyright');
+								$a->display();
+							?>
+							</p>
+						</div>
 
+						
+						<div class="grid_8">
+							<!--  -->
+						</div>
 
-			<!-- Site Info -->
-			<div class="site-info">
-				<div class="container_16">
-
-					<!-- CopyRight -->
-					<div class="grid_8">
-						<p class="copy">
-						<!-- Copyright ©  2017.  All Rights reserved.   -->
-						<?php
-							$a = new GlobalArea('Copyright');
-							$a->display();
-						?>
-						</p>
+						<div class="clear"></div>
 					</div>
-
-					<!-- Design By -->
-					<div class="grid_8">
-						<!--<p class="designby">Designed by <a href="#">eCancer Team</a></p>-->
-					</div>
-
-					<div class="clear"></div>
 				</div>
-			</div><!-- .site-info -->
-		</footer><!-- #colophon .site-footer -->
+			</footer>
 
 	</div>
     </div>

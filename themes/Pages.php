@@ -257,7 +257,6 @@
 						
 						<div class="grid_8">
 							<p class="copy">
-							Copyright ©  2017.  All Rights reserved.  
 							<?php
 								$a = new GlobalArea('Copyright');
 								$a->display();
@@ -267,7 +266,7 @@
 
 						
 						<div class="grid_8">
-							<!--<p class="designby">Designed by <a href="#">eCancer Team</a></p>-->
+						<!--  -->
 						</div>
 
 						<div class="clear"></div>
