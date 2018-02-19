@@ -37,25 +37,9 @@ if ($imgID) {
 	<div class="form-group">
 	<label class="control-label">Select Image:</label>
 	<?php
-		//echo $assetLib->image('img','imgID', 'Select Image', $bf);
 		$service = Core::make('helper/concrete/file_manager');
 		print $service->image('img', 'imgID', 'Select image', $pic);
-		/* file('selector_ID',
-				'name_of_hidden_form_element_for_fileObjID',
-				'Text to display to user'
-				);
-		*/
 	?>
 	</div>
 </fieldset>
 
-
-<?php
-/*<fieldset>
-	<legend>Image Upload</legend>
-	<div class="form-group">
-		<label class="control-label"><?php echo t('Select Image:'); ?></label>
-		<?php echo $assetLib->image('ccm-b-image', 'fID', t('Choose Image'), $bf, $args);?>
-	</div>
-</fieldset>*/
-?>

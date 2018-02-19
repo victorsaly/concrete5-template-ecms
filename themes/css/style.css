@@ -1707,10 +1707,6 @@ img.alignright {
 	margin: .5em;
 }
 
-.gallery-caption {
-
-}
-
 .wp-smiley {
 	margin: 0;
 }
@@ -2135,7 +2131,7 @@ aside ul {
 	cursor: pointer; 
 	text-indent: -9999px; 
 	opacity: 0.8; 
-	-webkit-transition: all .3s ease;
+	-webkit-transition: all .3s ease;	
 }
 
 .latestnews-body .flex-direction-nav .flex-next {
